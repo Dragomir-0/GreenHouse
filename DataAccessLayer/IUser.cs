@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace DataAccessLayer
 {
-    interface DataAccessLayer
+    interface IUser
     {
         DataTable SelectUser(string userName, string tableName);
 
