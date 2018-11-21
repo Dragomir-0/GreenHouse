@@ -14,7 +14,7 @@ namespace BussinessLogicLayer
         private string username;
         private string password;
 
-        public int userID
+        public int UserID
         {
             get { return userID; }
             set { userID = value; }
@@ -69,7 +69,7 @@ namespace BussinessLogicLayer
             List<User> userList = RetrieveUsers();
             foreach (User item in userList)
             {
-                if (item.password.Equals(password))
+                if (item.password.Equals(password) && item.username.Equals(username))
                 {
                     verified = true;
                 }

@@ -1,0 +1,2 @@
+C:\Users\lizyv\Source\Repos\GreenHouse2\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\lizyv\Source\Repos\GreenHouse2\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache

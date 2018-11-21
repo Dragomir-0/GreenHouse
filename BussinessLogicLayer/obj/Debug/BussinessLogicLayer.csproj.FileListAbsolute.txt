@@ -1,0 +1,2 @@
+C:\Users\lizyv\Source\Repos\GreenHouse2\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.csprojAssemblyReference.cache
+C:\Users\lizyv\Source\Repos\GreenHouse2\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.csproj.CoreCompileInputs.cache

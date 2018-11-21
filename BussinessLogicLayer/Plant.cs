@@ -70,5 +70,12 @@ namespace BussinessLogicLayer
             return plantList;
         }
 
+        public List<Plant> CurrentPlantsInGreenhouse()
+        {
+            List<Plant> currentPlantList = new List<Plant>();
+
+            return currentPlantList;
+
+        }
     }
 }

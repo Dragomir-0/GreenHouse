@@ -1,0 +1,5 @@
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.csprojAssemblyReference.cache
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.Login.resources
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.Properties.Resources.resources
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.csproj.GenerateResource.cache
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.csproj.CoreCompileInputs.cache
