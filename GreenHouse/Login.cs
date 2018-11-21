@@ -23,10 +23,10 @@ namespace GreenHouse
             string username = txtUsernameLogin.Text;
             string password = txtPasswordLogin.Text;
             User user = new User();
-            bool verified = user.VerifyUser(username, password);
-            if (verified)
+            user = user.VerifyUser(username, password);
+            if (user.UserID != 0)
             {
-                MainPage mainPage = new MainPage();
+                MainPage mainPage = new MainPage(user);
                 this.Hide();
                 mainPage.Show();
             }

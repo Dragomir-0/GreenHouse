@@ -3,3 +3,17 @@ C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.Login.re
 C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.Properties.Resources.resources
 C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.csproj.GenerateResource.cache
 C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.csproj.CoreCompileInputs.cache
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.MainPage.resources
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.SelectPlant.resources
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\bin\Debug\GreenHouse.exe.config
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\bin\Debug\GreenHouse.exe
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\bin\Debug\GreenHouse.pdb
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\bin\Debug\BussinessLogicLayer.dll
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\bin\Debug\DataAccessLayer.dll
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\bin\Debug\BussinessLogicLayer.pdb
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\bin\Debug\DataAccessLayer.pdb
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.csproj.CopyComplete
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.exe
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.pdb
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.UpdateOrInsertUser.resources
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.UpdatePlant.resources

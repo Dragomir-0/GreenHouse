@@ -11,10 +11,10 @@ namespace DataAccessLayer
 {
     interface IUser
     {
-        DataTable SelectUser(string userName, string tableName);
+        DataTable SelectUser(string tableName);
 
         void InsertUser(ArrayList dataUser, string tableName);
 
-        void UpdateUser(ArrayList updateUser, string tableName, string username);
+        void UpdateUser(ArrayList updateUser, string tableName, int userID);
     }
 }
