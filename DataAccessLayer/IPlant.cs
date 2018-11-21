@@ -12,6 +12,6 @@ namespace DataAccessLayer
     {
         DataTable SelectPlant();
 
-        void UpdatePlant(ArrayList updatePlant, string tableName, string plantName);
+        void UpdatePlant(ArrayList updatePlant, string tableName, int plantID);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -90,6 +91,27 @@ namespace BussinessLogicLayer
                     conditionData["SoilTemperature"].ToString(), conditionData["SoilHumidity"].ToString(), int.Parse(conditionData["PlantID"].ToString())));
             }
             return conditionList;
+        }
+
+        public Condition RetrieveUserCondition(int plantID)
+        {
+            Condition condition = new Condition();
+            List<Condition> conditionList = RetrieveConditions();
+            foreach (Condition item in conditionList)
+            {
+                if (plantID == item.PlantID)
+                {
+                    condition = new Condition(item.requirementID, item.airTemperature, item.airHumidity, item.vapourPressure, item.sunshine, item.soilTemperature, item.soilHumidity, item.UserPlantID);
+                }
+            }
+            return condition;
+        }
+
+        public void UpdateCondition(Condition condition)
+        {
+            ArrayList conditionList = new ArrayList() { condition.requirementID, condition.airTemperature, condition.airHumidity, condition.vapourPressure, condition.sunshine, condition.soilTemperature, condition.soilHumidity, condition.UserPlantID };
+            DataHandler handler = new DataHandler();
+            handler.UpdateCondition(conditionList, "Requirements", condition.requirementID);
         }
 
     }

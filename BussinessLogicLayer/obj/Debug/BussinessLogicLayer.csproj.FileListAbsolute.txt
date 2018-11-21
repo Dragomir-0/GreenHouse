@@ -1,0 +1,9 @@
+C:\Users\lizyv\Source\Repos\GreenHouse2\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.csprojAssemblyReference.cache
+C:\Users\lizyv\Source\Repos\GreenHouse2\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\lizyv\Source\Repos\GreenHouse2\BussinessLogicLayer\bin\Debug\BussinessLogicLayer.dll
+C:\Users\lizyv\Source\Repos\GreenHouse2\BussinessLogicLayer\bin\Debug\BussinessLogicLayer.pdb
+C:\Users\lizyv\Source\Repos\GreenHouse2\BussinessLogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\lizyv\Source\Repos\GreenHouse2\BussinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\lizyv\Source\Repos\GreenHouse2\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.csproj.CopyComplete
+C:\Users\lizyv\Source\Repos\GreenHouse2\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.dll
+C:\Users\lizyv\Source\Repos\GreenHouse2\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.pdb

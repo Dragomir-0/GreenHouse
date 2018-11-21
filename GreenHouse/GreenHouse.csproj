@@ -46,14 +46,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectPlant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectPlant.Designer.cs">
+      <DependentUpon>SelectPlant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePlant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePlant.Designer.cs">
+      <DependentUpon>UpdatePlant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateOrInsertUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateOrInsertUser.Designer.cs">
+      <DependentUpon>UpdateOrInsertUser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPage.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +93,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SelectPlant.resx">
+      <DependentUpon>SelectPlant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePlant.resx">
+      <DependentUpon>UpdatePlant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateOrInsertUser.resx">
+      <DependentUpon>UpdateOrInsertUser.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +114,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BussinessLogicLayer\BussinessLogicLayer.csproj">
+      <Project>{eb183a30-9f4f-481b-b101-2c9c57bf7c03}</Project>
+      <Name>BussinessLogicLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

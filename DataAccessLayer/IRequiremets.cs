@@ -14,6 +14,6 @@ namespace DataAccessLayer
 
         void InsertCondtion(ArrayList dataCondtion, string tableName);
 
-        void UpdateCondition(ArrayList dataCondtion, string tableName, string condition);
+        void UpdateCondition(ArrayList dataCondtion, string tableName, int requirementID);
     }
 }

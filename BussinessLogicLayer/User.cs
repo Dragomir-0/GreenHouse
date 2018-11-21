@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -13,8 +14,9 @@ namespace BussinessLogicLayer
         private int userID;
         private string username;
         private string password;
+        private int userPlantID;
 
-        public int userID
+        public int UserID
         {
             get { return userID; }
             set { userID = value; }
@@ -32,9 +34,31 @@ namespace BussinessLogicLayer
             set { password = value; }
         }
 
-        public User(int userID, string username, string password)
+        public int UserPlantID
+        {
+            get { return userPlantID; }
+            set { userPlantID = value; }
+        }
+
+
+        public User(int userID, string username, string password, int userPlantID)
         {
             this.userID = userID;
+            this.username = username;
+            this.password = password;
+            this.userPlantID = userPlantID;
+        }
+
+        public User(string username, string password, int userPlantID)
+        {
+            this.username = username;
+            this.password = password;
+            this.userPlantID = userPlantID;
+        }
+
+
+        public User(string username, string password)
+        {
             this.username = username;
             this.password = password;
         }
@@ -43,6 +67,12 @@ namespace BussinessLogicLayer
         {
 
         }
+        public User(int userID, int UserPlantID)
+        {
+            this.userID = userID;
+            this.userPlantID = UserPlantID;
+        }
+
         public User(int userID)
         {
             this.userID = userID;
@@ -51,32 +81,42 @@ namespace BussinessLogicLayer
         public List<User> RetrieveUsers()
         {
             DataHandler handler = new DataHandler();
-            DataTable data = handler.SelectUser(username, "User");
+            DataTable data = handler.SelectUser("User");
             List<User> userList = new List<User>();
-            if (data != null)
+            foreach (DataRow row in data.Rows)
             {
-                foreach (DataRow row in data.Rows)
-                {
-                    userList.Add(new User(int.Parse(row["UserID"].ToString()), row["Username"].ToString(), row["Password"].ToString()));
-                }
+                userList.Add(new User(int.Parse(row["UserID"].ToString()), row["Username"].ToString(), row["Password"].ToString(), int.Parse(row["PlantID"].ToString())));
             }
+            
             return userList;
         }
 
-        public bool VerifyUser(string username, string password)
+        public User VerifyUser(string username, string password)
         {
-            bool verified = false;
+            User user = new User();
             List<User> userList = RetrieveUsers();
             foreach (User item in userList)
             {
-                if (item.password.Equals(password))
+                if (item.password.Equals(password) && item.username.Equals(username))
                 {
-                    verified = true;
+                    user = new User(item.userID, item.username, item.password, item.userPlantID);
                 }
             }
-            return verified;
+            return user;
         }
 
+        public void InsertUser(User userParam)
+        {
+            DataHandler handler = new DataHandler();
+            ArrayList userList = new ArrayList() { userParam.username, userParam.password, userParam.userPlantID };
+            handler.InsertUser(userList, "User");
+        }
 
+        public void UpdateUser(User userParam)
+        {
+            DataHandler handler = new DataHandler();
+            ArrayList userList = new ArrayList() { userParam.username, userParam.password, userParam.userPlantID };
+            handler.UpdateUser(userList, "User", userParam.userID);
+        }
     }
 }

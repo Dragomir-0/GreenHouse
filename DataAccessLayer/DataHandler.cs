@@ -12,36 +12,31 @@ namespace DataAccessLayer
 {
     public class DataHandler : IUser, IRequiremets, IPlant
     {
-        private string connectionString;
-        private SqlConnection connection;
         private SqlCommand command;
         private SqlDataAdapter adapter;
         private DataTable dataTable;
 
-        // Lambda
-        public delegate string connectStringDelegate(string connectionStrg);
-        public connectStringDelegate connect = (connectionStrg) =>
-        {
-            return ConfigurationManager.ConnectionStrings[connectionStrg].ConnectionString;
-        };
+        SqlConnectionStringBuilder connectionString = new SqlConnectionStringBuilder();
 
-        public DataHandler(string connectioStringParam = "default")
+        public DataHandler()
         {
-            this.connectionString = connect(connectioStringParam);
-            connection = new SqlConnection(this.connectionString);
+            connectionString.DataSource = @"DESKTOP-T4H3RHU";
+            connectionString.InitialCatalog = "AutoGreenHouse";
+            connectionString.IntegratedSecurity = true;
         }
 
 
-        public DataTable SelectUser(string userName, string tableName)
+        public DataTable SelectUser(string tableName)
         {
-            string qeury = string.Format("SELECT UserID,Username,Password FROM User WHERE Username = '{0}'", userName);
+            SqlConnection connection = new SqlConnection(connectionString.ToString());
+            string query = string.Format("SELECT * FROM [User]");
             try
             {
                 if (connection.State != ConnectionState.Open)
                 {
                     connection.Open();
                 }
-                command = new SqlCommand(qeury, connection);
+                command = new SqlCommand(query, connection);
                 adapter = new SqlDataAdapter(command);
 
                 dataTable = new DataTable();
@@ -60,17 +55,18 @@ namespace DataAccessLayer
 
         public void InsertUser(ArrayList dataUser, string tableName)
         {
-            StringBuilder qeury = new StringBuilder("INSERT INTO " + tableName);
-            qeury.Append(" (Username,Password)");
-            qeury.Append(" VALUES");
-            qeury.Append(string.Format(" ('{0}','{1}')", dataUser[0], dataUser[1]));
+            SqlConnection connection = new SqlConnection(connectionString.ToString());
+            StringBuilder query = new StringBuilder("INSERT INTO [" + tableName);
+            query.Append("] (Username,Password, PlantID)");
+            query.Append(" VALUES");
+            query.Append(string.Format(" ('{0}','{1}', '{2}')", dataUser[0], dataUser[1], dataUser[2]));
             try
             {
                 if (connection.State != ConnectionState.Open)
                 {
                     connection.Open();
                 }
-                command = new SqlCommand(qeury.ToString(), connection);
+                command = new SqlCommand(query.ToString(), connection);
                 command.ExecuteNonQuery();
             }
             catch (Exception)
@@ -83,19 +79,21 @@ namespace DataAccessLayer
             }
         }
 
-        public void UpdateUser(ArrayList updateUser, string tableName, string username)
+        public void UpdateUser(ArrayList updateUser, string tableName, int userID)
         {
-            StringBuilder qeury = new StringBuilder("UPDATE " + tableName + " SET");
-            qeury.Append(string.Format(" Username = '{0}'", updateUser[0]));
-            qeury.Append(string.Format(", Password = '{0}'", updateUser[1]));
-            qeury.Append(string.Format(" WHERE Username = '{0}'", username));
+            SqlConnection connection = new SqlConnection(connectionString.ToString());
+            StringBuilder query = new StringBuilder("UPDATE [" + tableName + "] SET");
+            query.Append(string.Format(" Username = '{0}'", updateUser[0]));
+            query.Append(string.Format(", Password = '{0}'", updateUser[1]));
+            query.Append(string.Format(", PlantID = '{0}'", updateUser[2]));
+            query.Append(string.Format(" WHERE UserID = '{0}'", userID));
             try
             {
                 if (connection.State != ConnectionState.Open)
                 {
                     connection.Open();
                 }
-                command = new SqlCommand(qeury.ToString(), connection);
+                command = new SqlCommand(query.ToString(), connection);
                 command.ExecuteNonQuery();
             }
             catch (Exception)
@@ -110,14 +108,15 @@ namespace DataAccessLayer
 
         public DataTable SelectCondtion()
         {
-            string qeury = string.Format("SELECT * FROM Requirements");
+            SqlConnection connection = new SqlConnection(connectionString.ToString());
+            string query = string.Format("SELECT * FROM Requirements");
             try
             {
                 if (connection.State != ConnectionState.Open)
                 {
                     connection.Open();
                 }
-                command = new SqlCommand(qeury, connection);
+                command = new SqlCommand(query, connection);
                 adapter = new SqlDataAdapter(command);
 
                 dataTable = new DataTable();
@@ -136,17 +135,18 @@ namespace DataAccessLayer
 
         public void InsertCondtion(ArrayList dataCondtion, string tableName)
         {
-            StringBuilder qeury = new StringBuilder("INSERT INTO " + tableName);
-            qeury.Append(" (AirTemperature,AirHumidity,VapourPressure,Sunshine,SoilTemperature,SoilHumidity)");
-            qeury.Append(" VALUES");
-            qeury.Append(string.Format(" ('{0}','{1}','{2}','{3}','{4}','{5}')", dataCondtion[0], dataCondtion[1], dataCondtion[2], dataCondtion[3], dataCondtion[4], dataCondtion[5]));
+            SqlConnection connection = new SqlConnection(connectionString.ToString());
+            StringBuilder query = new StringBuilder("INSERT INTO " + tableName);
+            query.Append(" (AirTemperature,AirHumidity,VapourPressure,Sunshine,SoilTemperature,SoilHumidity)");
+            query.Append(" VALUES");
+            query.Append(string.Format(" ('{0}','{1}','{2}','{3}','{4}','{5}')", dataCondtion[0], dataCondtion[1], dataCondtion[2], dataCondtion[3], dataCondtion[4], dataCondtion[5]));
             try
             {
                 if (connection.State != ConnectionState.Open)
                 {
                     connection.Open();
                 }
-                command = new SqlCommand(qeury.ToString(), connection);
+                command = new SqlCommand(query.ToString(), connection);
                 command.ExecuteNonQuery();
             }
             catch (Exception)
@@ -159,23 +159,24 @@ namespace DataAccessLayer
             }
         }
 
-        public void UpdateCondition(ArrayList dataCondtion, string tableName, string condition)
+        public void UpdateCondition(ArrayList dataCondtion, string tableName, int requirementID)
         {
-            StringBuilder qeury = new StringBuilder("UPDATE " + tableName + " SET");
-            qeury.Append(string.Format(" AirTemperature = '{0}'", dataCondtion[0]));
-            qeury.Append(string.Format(", AirHumidity = '{0}'", dataCondtion[1]));
-            qeury.Append(string.Format(", VapourPressure = '{0}'", dataCondtion[2]));
-            qeury.Append(string.Format(", Sunshine = '{0}'", dataCondtion[3]));
-            qeury.Append(string.Format(", SoilTemperature = '{0}'", dataCondtion[4]));
-            qeury.Append(string.Format(", SoilHumidity = '{0}'", dataCondtion[5]));
-            qeury.Append(string.Format(" WHERE AirTemperature = '{0}'", condition));
+            SqlConnection connection = new SqlConnection(connectionString.ToString());
+            StringBuilder query = new StringBuilder("UPDATE " + tableName + " SET");
+            query.Append(string.Format(" AirTemperature = '{0}'", dataCondtion[0]));
+            query.Append(string.Format(", AirHumidity = '{0}'", dataCondtion[1]));
+            query.Append(string.Format(", VapourPressure = '{0}'", dataCondtion[2]));
+            query.Append(string.Format(", Sunshine = '{0}'", dataCondtion[3]));
+            query.Append(string.Format(", SoilTemperature = '{0}'", dataCondtion[4]));
+            query.Append(string.Format(", SoilHumidity = '{0}'", dataCondtion[5]));
+            query.Append(string.Format(" WHERE RequirementID = '{0}'", requirementID));
             try
             {
                 if (connection.State != ConnectionState.Open)
                 {
                     connection.Open();
                 }
-                command = new SqlCommand(qeury.ToString(), connection);
+                command = new SqlCommand(query.ToString(), connection);
                 command.ExecuteNonQuery();
             }
             catch (Exception)
@@ -190,14 +191,15 @@ namespace DataAccessLayer
 
         public DataTable SelectPlant()
         {
-            string qeury = string.Format("SELECT * FROM Plant");
+            SqlConnection connection = new SqlConnection(connectionString.ToString());
+            string query = string.Format("SELECT * FROM Plant");
             try
             {
                 if (connection.State != ConnectionState.Open)
                 {
                     connection.Open();
                 }
-                command = new SqlCommand(qeury, connection);
+                command = new SqlCommand(query, connection);
                 adapter = new SqlDataAdapter(command);
 
                 dataTable = new DataTable();
@@ -214,20 +216,21 @@ namespace DataAccessLayer
             return dataTable;
         }
 
-        public void UpdatePlant(ArrayList updatePlant, string tableName, string plantName)
+        public void UpdatePlant(ArrayList updatePlant, string tableName, int plantID)
         {
-            StringBuilder qeury = new StringBuilder("UPDATE " + tableName + " SET");
-            qeury.Append(string.Format(" PlantName = '{0}'", updatePlant[0]));
-            qeury.Append(string.Format(", PlantType = '{0}'", updatePlant[1]));
-            qeury.Append(string.Format(", PlantDescription = '{0}'", updatePlant[2]));            
-            qeury.Append(string.Format(" WHERE PlantName = '{0}'", plantName));
+            SqlConnection connection = new SqlConnection(connectionString.ToString());
+            StringBuilder query = new StringBuilder("UPDATE " + tableName + " SET");
+            query.Append(string.Format(" PlantName = '{0}'", updatePlant[0]));
+            query.Append(string.Format(", PlantType = '{0}'", updatePlant[1]));
+            query.Append(string.Format(", PlantDescription = '{0}'", updatePlant[2]));            
+            query.Append(string.Format(" WHERE PlantID = '{0}'", plantID));
             try
             {
                 if (connection.State != ConnectionState.Open)
                 {
                     connection.Open();
                 }
-                command = new SqlCommand(qeury.ToString(), connection);
+                command = new SqlCommand(query.ToString(), connection);
                 command.ExecuteNonQuery();
             }
             catch (Exception)
