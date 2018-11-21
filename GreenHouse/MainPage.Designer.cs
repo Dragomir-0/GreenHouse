@@ -36,13 +36,13 @@
             this.plantMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectPlantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePlantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conditionMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvPlantMainPage = new System.Windows.Forms.DataGridView();
             this.lblMainPageIntro = new System.Windows.Forms.Label();
             this.btnSimulateMainPage = new System.Windows.Forms.Button();
             this.lblSelectedPlantMainPage = new System.Windows.Forms.Label();
             this.dgvConditionsMainPage = new System.Windows.Forms.DataGridView();
             this.lblConditionsMainPage = new System.Windows.Forms.Label();
-            this.conditionMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlantMainPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConditionsMainPage)).BeginInit();
@@ -74,21 +74,21 @@
             // updateUserToolStripMenuItem
             // 
             this.updateUserToolStripMenuItem.Name = "updateUserToolStripMenuItem";
-            this.updateUserToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.updateUserToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.updateUserToolStripMenuItem.Text = "Update User";
             this.updateUserToolStripMenuItem.Click += new System.EventHandler(this.updateUserToolStripMenuItem_Click);
             // 
             // addUserToolStripMenuItem
             // 
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.addUserToolStripMenuItem.Text = "Add User";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.logOutToolStripMenuItem.Text = "Log out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -104,16 +104,21 @@
             // selectPlantToolStripMenuItem
             // 
             this.selectPlantToolStripMenuItem.Name = "selectPlantToolStripMenuItem";
-            this.selectPlantToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.selectPlantToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.selectPlantToolStripMenuItem.Text = "Select Plant";
             this.selectPlantToolStripMenuItem.Click += new System.EventHandler(this.selectPlantToolStripMenuItem_Click);
             // 
             // updatePlantToolStripMenuItem
             // 
             this.updatePlantToolStripMenuItem.Name = "updatePlantToolStripMenuItem";
-            this.updatePlantToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.updatePlantToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.updatePlantToolStripMenuItem.Text = "Update Plant";
             this.updatePlantToolStripMenuItem.Click += new System.EventHandler(this.updatePlantToolStripMenuItem_Click);
+            // 
+            // conditionMenuToolStripMenuItem
+            // 
+            this.conditionMenuToolStripMenuItem.Name = "conditionMenuToolStripMenuItem";
+            this.conditionMenuToolStripMenuItem.Size = new System.Drawing.Size(12, 24);
             // 
             // dgvPlantMainPage
             // 
@@ -144,6 +149,7 @@
             this.btnSimulateMainPage.Text = "Simulate Conditions";
             this.btnSimulateMainPage.UseVisualStyleBackColor = true;
             this.btnSimulateMainPage.Visible = false;
+            this.btnSimulateMainPage.Click += new System.EventHandler(this.btnSimulateMainPage_Click);
             // 
             // lblSelectedPlantMainPage
             // 
@@ -174,11 +180,6 @@
             this.lblConditionsMainPage.TabIndex = 6;
             this.lblConditionsMainPage.Text = "Plant conditions:";
             this.lblConditionsMainPage.Visible = false;
-            // 
-            // conditionMenuToolStripMenuItem
-            // 
-            this.conditionMenuToolStripMenuItem.Name = "conditionMenuToolStripMenuItem";
-            this.conditionMenuToolStripMenuItem.Size = new System.Drawing.Size(12, 24);
             // 
             // MainPage
             // 

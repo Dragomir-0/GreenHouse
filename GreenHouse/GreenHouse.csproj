@@ -66,6 +66,12 @@
     <Compile Include="SelectPlant.Designer.cs">
       <DependentUpon>SelectPlant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Simulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Simulation.Designer.cs">
+      <DependentUpon>Simulation.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdatePlant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,12 +102,16 @@
     <EmbeddedResource Include="SelectPlant.resx">
       <DependentUpon>SelectPlant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Simulation.resx">
+      <DependentUpon>Simulation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdatePlant.resx">
       <DependentUpon>UpdatePlant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateOrInsertUser.resx">
       <DependentUpon>UpdateOrInsertUser.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -17,3 +17,4 @@ C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.exe
 C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.pdb
 C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.UpdateOrInsertUser.resources
 C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.UpdatePlant.resources
+C:\Users\lizyv\Source\Repos\GreenHouse2\GreenHouse\obj\Debug\GreenHouse.Simulation.resources

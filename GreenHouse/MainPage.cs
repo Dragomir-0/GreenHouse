@@ -15,6 +15,7 @@ namespace GreenHouse
     {
         Plant plant;
         User user;
+        Condition condition;
         BindingSource bindingSourcePlant;
         BindingSource bindingSourceCondition;
         public MainPage()
@@ -59,7 +60,7 @@ namespace GreenHouse
         {
             plant = new Plant();
             plant = plant.RetrieveUserPlant(user.UserID);
-            Condition condition = new Condition();
+            condition = new Condition();
             condition = condition.RetrieveUserCondition(plant.PlantID);
             if (plant.PlantID != 0)
             {
@@ -124,6 +125,13 @@ namespace GreenHouse
             UpdatePlant updateOrInsertPlant = new UpdatePlant(user, plant);
             this.Hide();
             updateOrInsertPlant.Show();
+        }
+
+        private void btnSimulateMainPage_Click(object sender, EventArgs e)
+        {
+            Simulation simulation = new Simulation(plant, condition);
+            this.Hide();
+            simulation.Show();
         }
     }
 }
